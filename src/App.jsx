@@ -1,17 +1,21 @@
-import React from 'react'
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Nav from "./nav";
+import DashboardContainer from "./pages/dashboardContainer";
+import Login from "./pages/login"; 
 
-import DashboardContainer from './dashboardContainer.jsx'
 function App() {
-
-/// todos los componentes se importan aca!!   Quiero codigo limpio y MODULARIZADO ----> si si  esto va para vos juan jajjaa, las dudas que tengan me avisan , antes de instalar una dependencia `por que si me avisan
-
+  
   return (
     
-    <div>
-      <DashboardContainer/>
-    </div>
-    
-  )
+    <Router>
+      <Nav/>
+      <Routes>
+        <Route path="/dashboard" element={<DashboardContainer />} />
+        <Route path="/login" element={<Login />} />
+      </Routes>
+    </Router>
+  );
 }
 
-export default App
+export default App;
