@@ -1,0 +1,117 @@
+form{
+    background-color: #1D3461;
+    font-size: large;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    display: flex;
+    width: 800px;
+    height: 800px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    outline: 6px solid #FF3366;
+    border-radius: 10px;
+}
+
+#frontimginput{
+    
+}
+#frontimglabel{
+    font-size: 20px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    display: flex;
+    width: 100%;
+    height: 50px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    
+}
+#backimglabel{
+    font-size: 20px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    display: flex;
+    width: 100%;
+    height: 50px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+#nameinput{
+    font-size: 20px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    display: flex;
+    width: 100%;
+    height: 25px;
+    border-radius: 10px;
+
+
+}
+
+#autorinput{
+    font-size: 20px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    display: flex;
+    width: 100%;
+    height: 25px;
+    border-radius: 10px;
+
+}
+select{
+    font-size: 20px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    display: flex;
+    width: 100%;
+    height: 25px;
+    border-radius: 10px;
+}
+#inputcode{
+    font-size: 20px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    display: flex;
+    width: 100%;
+    height: 25px;
+    border-radius: 10px;
+
+}
+
+input:focus{
+    outline: none;
+    border-color: #e0ff33 ;
+    transition: border-color .5s;
+    
+}
+
+input:not(:placeholder-shown){
+    border-color: #33ff4e ;
+    transition: border-color .5s;
+    
+}
+input::placeholder-shown{
+    border-color: #FF3366;
+    transition: border-color .5s;
+}
+
+img{
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+    margin: 10px;
+    border: 2px solid #FF3366;
+
+    border-radius:10px;
+    border: 1px solid #33ff4e;
+}
+
+
+button:active{
+    content:"¡Agregado!";
+    background-color: #33ff4e;
+    color: white;
+    border-radius: 10px;
+    border: 2px solid #FF3366;
+    transition: all .5s;
+}
