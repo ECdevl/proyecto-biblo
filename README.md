@@ -1,0 +1,2 @@
+## DIOS
+como odio react
