@@ -4,6 +4,7 @@ import Nav from "./nav";
 import DashboardContainer from "./pages/dashboardContainer";
 import Login from "./pages/login";
 import BookList from "./bookList";
+import Home from "./pages/Home"
 
 function App() {
   const [books, setBooks] = useState([]); // Estado compartido para los libros
@@ -14,17 +15,11 @@ function App() {
 
   return (
     <Router>
-      <Nav />
+      <Nav/>
       <Routes>
         <Route
           path="/"
-          element={
-            <div>
-              <h1>Bienvenido a la Biblioteca</h1>
-              
-              <BookList books={books} /> {/* Pasar la lista de libros */}
-            </div>
-          }
+          element={<Home books={books} onAddBook={handleAddBook}/>}
         />
         <Route
           path="/dashboard"
