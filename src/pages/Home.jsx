@@ -4,12 +4,9 @@ import BookList from "../bookList";
 
 
 
-function Home(){
-    const [books, setBooks] = useState([]); // Estado compartido para los libros
+function Home({ books }){
 
-    const handleAddBook = (book) => {
-      setBooks([...books, book]); // Agregar un libro a la lista
-    };
+
 
     return(
         <div id="homediv">
@@ -19,12 +16,14 @@ function Home(){
                 <p id="hs">Horarios de atencion: de <span>9</span> a <span>12</span> hs</p>
             </div>
             <div id="imagenes">
-            <img src="src/assets/intro.jpg"></img>
-            <img src="src/assets/download.jpg"></img>
-            <img src="src/assets/interior.jpg"></img>
+            <img id="img-home"src="src/assets/intro.jpg"></img>
+            <img id="img-home"src="src/assets/download.jpg"></img>
+            <img id="img-home"src="src/assets/interior.jpg"></img>
             </div>
-            <h2>Explora nuestra coleccion de libros</h2>
-            <BookList books={books}/>
+            <h2>Libros agregados recientemente</h2>
+            <BookList books={books} />
+      
+
         </div>
     )
 }

@@ -3,41 +3,38 @@ form{
     font-size: large;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     display: flex;
-    width: 800px;
-    height: 800px;
-    flex-direction: column;
+    width: 600px;
+    height: 600px;
+    flex-direction:column;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content:baseline;
     align-items: center;
     outline: 6px solid #FF3366;
     border-radius: 10px;
 }
-
-#frontimginput{
-    
+form:valid{
+    outline: 7px solid green;
+    transition: outline .5s;
 }
+form:not(valid){
+    outline: 6px solid #FF3366;
+    transition: outline .5s;
+}
+
+
 #frontimglabel{
     font-size: 20px;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     display: flex;
-    width: 100%;
-    height: 50px;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
+
+
     
 }
 #backimglabel{
     font-size: 20px;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     display: flex;
-    width: 100%;
-    height: 50px;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
+
 }
 
 #nameinput{
@@ -49,6 +46,13 @@ form{
     border-radius: 10px;
 
 
+}
+
+#imagecontainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0px; /* Espacio entre los divs */
 }
 
 #autorinput{
@@ -95,15 +99,38 @@ input::placeholder-shown{
     transition: border-color .5s;
 }
 
-img{
+#frontimgdiv{
+    position: relative;
+    width: 225px;
+}
+#backimgdiv{
+    position: relative;
+    width: 225px;
+}
+
+#backimg{
     width: 200px;
     height: 200px;
     border-radius: 10px;
     margin: 10px;
     border: 2px solid #FF3366;
-
     border-radius:10px;
     border: 1px solid #33ff4e;
+}
+
+img[src=""] {
+    display: none; /* Oculta la imagen si no hay src */
+}
+
+#frontimg{
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+    margin: 10px;
+    border: 2px solid #FF3366;
+    border-radius:10px;
+    border: 1px solid #33ff4e;
+
 }
 
 

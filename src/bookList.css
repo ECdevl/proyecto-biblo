@@ -1,0 +1,11 @@
+#book-list-ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+
+    list-style:none;
+    padding: 0;
+    gap:0px;
+}
+

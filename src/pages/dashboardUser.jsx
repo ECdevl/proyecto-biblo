@@ -25,15 +25,25 @@ function DashboardUser({ onSubmitBookData }) {
 
   return (
     <form onSubmit={handleSubmit}>
-      <div>
-        <label id="frontimglabel">Imagen de portada:</label><br/>
-        <input id="frontimginput"type="file" name="coverImage" accept="image/*" onChange={handleChange} required/><br/>
-        <img id="frontimg" src={formData.coverImage ? URL.createObjectURL(formData.coverImage) : ''} alt="Portada" style={{ width: '100px', height: '150px' }} />
+      <div id="imagecontainer">
+      <div id="frontimgdiv">
+        <label id="frontimglabel">Imagen de portada: </label>
+        <input id="frontimginput" type="file" name="coverImage" accept="image/*" onChange={handleChange} required/><br/>
+        <img 
+          id="frontimg" 
+          src={formData.coverImage ? URL.createObjectURL(formData.coverImage) : ''} 
+          style={{ display: formData.coverImage ? 'block' : 'none' }} 
+        />
       </div>
-      <div>
-        <label id="backimglabel">Imagen trasera:</label><br/>
-        <input id="backimginput" type="file"  name="backImage" accept="image/*" onChange={handleChange} required/><br/>
-        <img id="backimg" src={formData.backImage ? URL.createObjectURL(formData.backImage) : ''} alt="Contraportada" style={{ width: '100px', height: '150px' }} />
+      <div id='backimgdiv'>
+        <label id="backimglabel">Imagen trasera: </label>
+        <input id="backimginput" type="file" name="backImage" accept="image/*" onChange={handleChange} required/><br/>
+        <img 
+          id="backimg" 
+          src={formData.backImage ? URL.createObjectURL(formData.backImage) : ''} 
+          style={{ display: formData.backImage ? 'block' : 'none' }} 
+        />
+      </div>
       </div>
       <div>
         <label>Nombre del libro:</label><br/>
@@ -45,7 +55,7 @@ function DashboardUser({ onSubmitBookData }) {
       </div>
       <div>
         <label>Código de barras:</label><br/>
-        <input id="inputcode"type="text" name="barcode" value={formData.barcode} onChange={handleChange} placeholder='Codigo de barras (opcional)'/>
+        <input id="inputcode" type="text" name="barcode" value={formData.barcode} onChange={handleChange} placeholder='Codigo de barras (opcional)'/>
       </div>
       <div>
         <label>Disponibilidad:</label><br/>

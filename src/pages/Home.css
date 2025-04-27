@@ -24,10 +24,31 @@ span{
 }
 
 
-img{
-    position:relative;
-    
-    width: 400px;
-    height:250px;
+#imagenes{
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
 }
+#img-home{
+    width: 400px;
+    height: 200px;
+    border-radius: 5px;
+}
+#img-home:hover{
+    transform: scale(1.05);
+    transition: 0.3s;
+}
+#img-home:active{
+    transform: scale(1.10);
+    transition: 0.3s;
+}
+#img-home:not(:hover){
+    transform: scale(1);
+    transition: 0.3s;
+}
+
 
