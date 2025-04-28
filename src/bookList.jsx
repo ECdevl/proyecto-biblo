@@ -1,13 +1,22 @@
 import React, { useState } from 'react';
 import BookCard from './BookCard';
 import "./BookList.css"
-function BookList({ books }) {
+function BookList({ books, quantity, genero, admin }) {
+    if (quantity === undefined) {
+        quantity = 3; // Valor por defecto si no se proporciona
+    } else if (quantity == "all"){
+        quantity = books.length; // Si se pasa "all", mostrar todos los libros
+    }
+    if (genero !== undefined) {
+        books = books.filter((book) => book.genre === genero); // Filtrar libros por género
+    }
+    if (admin == false){
     return(
 
         <div id="book-list">
             {books.length === 0 ? (<p>No hay libros</p>) : (
             <ul id='book-list-ul'>
-                {books.map((book, index) => (
+                {books.map((book, index) => ( index < quantity) && (
                     <li key={index}>
                         <BookCard book={book} />
                     </li>
@@ -15,7 +24,23 @@ function BookList({ books }) {
             </ul>
             )}
         </div>
-            )}
+            )
+        }else { // TODO: Crear un componente BookCardAdmin para poder editar los libros o eliminarlos
+            return(
+                <div id="book-list"> 
+                    {books.length === 0 ? (<p>No hay libros</p>) : (
+                    <ul id='book-list-ul'>
+                        {books.map((book, index) => ( index < quantity) && (
+                            <li key={index}>
+                                <BookCard book={book} />
+                            </li>
+                        ))}
+                    </ul>
+                    )}
+                </div>
+            )
+        }
+    }
 export default BookList;
 
     

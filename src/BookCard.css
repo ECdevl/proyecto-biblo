@@ -1,14 +1,72 @@
 #main {
+    position:relative;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    flex-wrap:nowrap;
-    width: 500px;
-    height: 500px;
-    border: 2px solid #000;
+    text-align: center;
+    flex-flow: column nowrap;
+    width: 250px;
+    height: 300px;
+
     border-radius: 10px;
-    background-color: gray;
+    overflow: hidden;
+    font-size: large;
+    transition: all 0.3s ease-in-out;
+}
+
+#main h5{
+
+    visibility: hidden;
+}
+
+#main:hover h5{
+    visibility: visible;
+}
+
+#main p{
+    visibility: hidden;
+}
+#main.expand p{
+    visibility: visible;
+}
+#main h2{
+    visibility: hidden;
+}
+#main.expand h2{
+    visibility: visible;
+}
+#main.expand h5{
+    visibility: hidden;
+}
+
+#main h2{
+    margin: 0px 0;
+    padding: 0;
+}
+#main h3{
+    margin: 0px 0;
+    padding: 0;
+}
+
+#main p{
+    margin: 0px 0;
+    padding: 0;
+}
+
+#main.expand {
+
+    z-index: 1000;
+    background-color: black;
+    width: 400px;
+    height:550px;
+    transition: all 0.3s ease-in-out;
+}
+
+
+#disponibilidad.Disponible {
+    color: green;
+}
+#disponibilidad.no-disponible {
+    color: red;
 }
 
 #nombre {
@@ -19,35 +77,33 @@
     
     position: relative;
     
-    margin-top: 10px;
+
     width: 250px; /* Fijar el ancho del contenedor */
     height: 300px; /* Fijar la altura del contenedor */
 }
 
 #portada {
-
-    position: absolute;
     width: 250px; /* Fijar el ancho de la imagen */
     height: 300px; /* Fijar la altura de la imagen */
-    object-fit:fill; /* Asegurar que la imagen se ajuste al contenedor */
+    object-fit:scale-down; /* Asegurar que la imagen se ajuste al contenedor */
     transition: opacity 0.3s ease-in-out; /* Transición suave */
 }
 
 #trasera {
+    left:0px;
+    top:0px;
     position: absolute;
-
-
     width: 250px; /* Fijar el ancho de la imagen */
     height: 300px; /* Fijar la altura de la imagen */
-    object-fit:fill; /* Asegurar que la imagen se ajuste al contenedor */
+    object-fit:scale-down; /* Asegurar que la imagen se ajuste al contenedor */
     opacity: 0; /* Ocultar la imagen trasera por defecto */
     transition: opacity 0.3s ease-in-out; /* Transición suave */
 }
-#main:hover #portada {
-    opacity: 0; /* Ocultar la imagen delantera al pasar el mouse */
+#portadaContainer:hover #trasera {
+    opacity: 1; /* Ocultar la imagen delantera al pasar el mouse */
 }
-#main:hover #trasera {
-    opacity: 1; /* Mostrar la imagen trasera al pasar el mouse */
+#portadaContainer:hover #portada {
+    opacity: 0; /* Mostrar la imagen trasera al pasar el mouse */
 }
 
 

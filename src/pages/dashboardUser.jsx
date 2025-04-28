@@ -7,6 +7,8 @@ function DashboardUser({ onSubmitBookData }) {
     name: '',
     author: '',
     barcode: '',
+    availability:'',
+    genre: '',
   });
 
   const handleChange = (e) => {
@@ -52,6 +54,10 @@ function DashboardUser({ onSubmitBookData }) {
       <div>
         <label>Autor:</label><br/>
         <input id="autorinput" type="text" name="author" value={formData.author} onChange={handleChange} required placeholder='Autor del libro'/>
+      </div>
+      <div>
+        <label>Genero:</label><br/>
+        <input id="inputcode" type="text" name="genre" value={formData.genre} onChange={handleChange} required placeholder='Genero del libro'/>
       </div>
       <div>
         <label>Código de barras:</label><br/>
