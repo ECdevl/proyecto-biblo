@@ -13,11 +13,7 @@ function DashboardContainer({ books, onAddBook }) {
       <h1>Agregar un libro</h1>
       <DashboardUser onSubmitBookData={handleBookData} />
       <h2>Libros Agregados</h2>
-      <div>
-        {books.map((book, index) => (
-          <BookCard key={index} book={book} />
-        ))}
-      </div>
+
     </div>
   );
 }

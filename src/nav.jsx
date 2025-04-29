@@ -4,13 +4,13 @@ import "./nav.css";
 
 function Nav() {
   return (
-    <nav>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-blue">
       <div>Logo</div>
-      <ul>
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/dashboard">Dashboard</Link></li>
-        <li><Link to="/login">Login</Link></li>
-        <li><Link to="/catalogo">Libros</Link></li>
+      <ul class="navbar-nav">
+        <li class="nav-item"><Link to="/">Home</Link></li>
+        <li class="nav-item"><Link to="/dashboard">Dashboard</Link></li>
+        <li class="nav-item"><Link to="/login">Login</Link></li>
+        <li class="nav-item"><Link to="/catalogo">Libros</Link></li>
       </ul>
     </nav>
   );

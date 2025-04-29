@@ -4,8 +4,8 @@
     align-items: center;
     text-align: center;
     flex-flow: column nowrap;
-    width: 250px;
-    height: 300px;
+    width: 400px;
+    height: 500px;
 
     border-radius: 10px;
     overflow: hidden;
@@ -13,30 +13,7 @@
     transition: all 0.3s ease-in-out;
 }
 
-#main h5{
 
-    visibility: hidden;
-}
-
-#main:hover h5{
-    visibility: visible;
-}
-
-#main p{
-    visibility: hidden;
-}
-#main.expand p{
-    visibility: visible;
-}
-#main h2{
-    visibility: hidden;
-}
-#main.expand h2{
-    visibility: visible;
-}
-#main.expand h5{
-    visibility: hidden;
-}
 
 #main h2{
     margin: 0px 0;
@@ -52,15 +29,13 @@
     padding: 0;
 }
 
-#main.expand {
 
-    z-index: 1000;
-    background-color: black;
-    width: 400px;
-    height:550px;
-    transition: all 0.3s ease-in-out;
+#header{
+    width: 100%;
+    background-color: gray;
+    color:aliceblue;
+    font-size: larger;
 }
-
 
 #disponibilidad.Disponible {
     color: green;

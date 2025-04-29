@@ -27,16 +27,22 @@ function BookList({ books, quantity, genero, admin }) {
             )
         }else { // TODO: Crear un componente BookCardAdmin para poder editar los libros o eliminarlos
             return(
-                <div id="book-list"> 
+                <div id="book-list" class="container"> 
+                <div class="row-15">
+                    
                     {books.length === 0 ? (<p>No hay libros</p>) : (
                     <ul id='book-list-ul'>
                         {books.map((book, index) => ( index < quantity) && (
+                            <div class="row">
                             <li key={index}>
                                 <BookCard book={book} />
                             </li>
+                            </div>
                         ))}
                     </ul>
                     )}
+                    
+                    </div>
                 </div>
             )
         }

@@ -26,7 +26,7 @@ function App() {
           element={<DashboardContainer books={books} onAddBook={handleAddBook} />} // Pasar estado y función
         />
         <Route path="/login" element={<Login />}/>
-        <Route path="/catalogo" element={<BookList books={books} quantity={"all"} genero={"TERROR"}/>}/>
+        <Route path="/catalogo" element={<BookList books={books} quantity={"all"}/>}/>
       </Routes>
     </Router>
   );
