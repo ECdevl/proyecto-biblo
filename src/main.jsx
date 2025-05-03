@@ -1,6 +1,7 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import './index.css'
+// Importar Bootstrap CSS antes de tu CSS personalizado
+import 'bootstrap/dist/css/bootstrap.min.css'
 import App from './App.jsx'
 
 
