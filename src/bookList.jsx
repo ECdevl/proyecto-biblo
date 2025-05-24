@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import BookCard from './BookCard';
 import "./BookList.css"
-function BookList({ books, quantity, genero, admin }) {
+function BookList({ books, quantity, nombre, admin }) {
     if (quantity === undefined) {
         quantity = 3; // Valor por defecto si no se proporciona
     } else if (quantity == "all"){
         quantity = books.length; // Si se pasa "all", mostrar todos los libros
     }
-    if (genero !== undefined) {
-        books = books.filter((book) => book.genre === genero); // Filtrar libros por género
+    if (nombre !== undefined) {
+        books = books.filter((book) => book.nombre === nombre); // Filtrar libros por género
     }
     if (admin == false){
     return(

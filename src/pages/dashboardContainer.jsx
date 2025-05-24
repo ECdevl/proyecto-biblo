@@ -1,5 +1,5 @@
 import React from 'react';
-import DashboardUser from './dashboardUser';
+import DashboardUser from './dashboardAdministrador';
 import BookCard from "../BookCard";
 import "./DashboardContainer.css"
 function DashboardContainer({ books, onAddBook }) {

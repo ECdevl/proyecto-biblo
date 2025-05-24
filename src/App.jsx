@@ -4,7 +4,7 @@ import Nav from "./nav";
 import DashboardContainer from "./pages/dashboardContainer";
 import Login from "./pages/login";
 import Home from "./pages/Home";
-import BookList from "./bookList";
+import DashboardUser from "./pages/dashboardUser"
 
 function App() {
   const [books, setBooks] = useState([]); // Estado compartido para los libros
@@ -26,7 +26,7 @@ function App() {
           element={<DashboardContainer books={books} onAddBook={handleAddBook} />} // Pasar estado y función
         />
         <Route path="/login" element={<Login />}/>
-        <Route path="/catalogo" element={<BookList books={books} quantity={"all"}/>}/>
+        <Route path="/catalogo" element={<DashboardUser books={books}/>}/>
       </Routes>
     </Router>
   );

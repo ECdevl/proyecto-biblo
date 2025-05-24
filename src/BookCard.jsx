@@ -1,42 +1,58 @@
-import React from 'react';
-import "./BookCard.css"
+import React, { useState } from 'react';
+import { Form, Button, Container, Row, Col, Card, Image } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+import BookMore from './bookMore.jsx';
+
 function BookCard({ book }) {
+  const [showMore, setShowMore] = useState(false);
+
+  function handleShowMore() {
+    setShowMore(true);
+
+  }
+
+  function handleCloseMore() {
+    setShowMore(false);
 
 
+  }
 
   return (
-    <div id="main" class="card">
-      <div id="header" class="card-header">{book.name}</div>
+    
+      <Card id="main" style={{ width: '18rem', textAlign: 'center' }}>
+        <Card.Header id="header" >{book.name}</Card.Header>
 
-
-        <div id="portadaContainer">
-            <img
-              src={URL.createObjectURL(book.coverImage)}
-              alt="Portada"
-              id="portada"
-              class="card-img-top"
+          <Card.Img
+            src={URL.createObjectURL(book.coverImage)}
+            alt="Portada"
+            id="portada"
+            variant="top"
+            style={{ width: '250px', height: '300px',objectFit: 'fill', margin: 'auto' }}
             />
-            <img
-              src={URL.createObjectURL(book.backImage)}
-              alt="Portada"
-              id="trasera"
-              class="card-img-top"
-              />
-        </div>
 
-        <div class="card-body">
+
+        <Card.Body >
+          <Card.Text id="genre" >Género: {book.genre}</Card.Text>
+          {book.availability === "disponible" ? (
+            <Card.Text id="disponibilidad"><strong>{book.availability}</strong></Card.Text>
+          ) : (
+            <Card.Text id="disponibilidad"><strong>{book.availability}</strong></Card.Text>
+          )}
+          <Card.Text id="autor"><strong>Autor:</strong> {book.author}</Card.Text>
+          <Card.Text id="codigo">{book.barcode}</Card.Text>
+          <Button id="btn" variant="primary" onClick={handleShowMore} >Mostrar Mas</Button>
+
+
+        </Card.Body>
+        {showMore && <BookMore book={book} onClose={handleCloseMore} />}
+        
+      </Card>
       
-      <h3 id="genre" class="card-text">Genero: {book.genre}</h3>
-      {book.availability === "disponible" ? (
-        <p id="disponibilidad" className="Disponible" class="card-text"><strong>{book.availability}</strong></p>
-      ) : (
-        <p id="disponibilidad" className="no disponible" class="card-text"><strong>{book.availability}</strong></p>
-      )}
-      <p id="autor" class="card-text"><strong>Autor:</strong> {book.author}</p>
-      <p id="codigo" class="card-text">{book.barcode}</p>
 
-        </div>
-    </div>
+
+      
+
   );
 }
 
